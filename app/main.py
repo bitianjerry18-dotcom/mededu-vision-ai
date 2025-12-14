@@ -1,6 +1,6 @@
 from fastapi import FastAPI, File, UploadFile
 from fastapi.responses import JSONResponse
-from detector import detect_objects
+from app.detector import detect_objects
 from PIL import Image
 import io
 
