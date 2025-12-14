@@ -3,7 +3,7 @@ uvicorn
 python-multipart
 
 # Core ML
-numpy
+numpy==1.26.4
 pillow
 opencv-python-headless
 

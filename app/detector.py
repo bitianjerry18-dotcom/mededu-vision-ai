@@ -1,7 +1,13 @@
+# from ultralytics import YOLO
+
+# # Load model ONCE (important for Render performance)
+# model = YOLO("models/yolov8n.pt")
+
 from ultralytics import YOLO
 
-# Load model ONCE (important for Render performance)
 model = YOLO("models/yolov8n.pt")
+model.to("cpu")
+
 
 def detect_objects(image):
     results = model(image, conf=0.25)

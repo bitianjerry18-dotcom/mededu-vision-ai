@@ -8,9 +8,12 @@ RUN apt-get update && apt-get install -y \
     libglib2.0-0 \
     && rm -rf /var/lib/apt/lists/*
 
-# Install Python deps
+# Copy requirements first (for layer caching)
 COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+
+# 🔥 IMPORTANT: upgrade pip before installing heavy deps
+RUN pip install --upgrade pip && \
+    pip install --no-cache-dir -r requirements.txt
 
 # Copy app and model
 COPY app ./app
