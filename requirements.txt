@@ -1,9 +1,15 @@
 fastapi
 uvicorn
-ultralytics
-torch
-torchvision
-opencv-python-headless
-pillow
-numpy
 python-multipart
+
+# Core ML
+numpy
+pillow
+opencv-python-headless
+
+# CPU-only PyTorch (NO CUDA)
+torch==2.2.2
+torchvision==0.17.2
+
+# YOLO
+ultralytics==8.3.237
